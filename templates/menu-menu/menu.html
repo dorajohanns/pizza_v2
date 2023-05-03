@@ -1,5 +1,57 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Hallo this is html</h1>
+<html>
+
+  <body>
+    <header>
+      <h1>Menu</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Pizzas</h2>
+        <ul class="menu">
+          <li>
+            <img src="pizza-margarita.jpg" alt="Pepperoni Pizza">
+            <h3>Pepperoni Pizza</h3>
+            <p>A classic pizza topped with tomato sauce, mozzarella cheese, and pepperoni slices.</p>
+            <span class="price">$12.99</span>
+          </li>
+          <li>
+            <img src="../images/pizza-margarita.jpg" alt="Margherita Pizza">
+            <h3>Margherita Pizza</h3>
+            <p>A simple pizza topped with tomato sauce, fresh mozzarella cheese, and basil leaves.</p>
+            <span class="price">$10.99</span>
+          </li>
+          <li>
+            <img src="hawaiian.jpg" alt="Hawaiian Pizza">
+            <h3>Hawaiian Pizza</h3>
+            <p>A pizza topped with tomato sauce, mozzarella cheese, ham, and pineapple chunks.</p>
+            <span class="price">$13.99</span>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Drinks</h2>
+        <ul class="menu">
+          <li>
+            <h3>Soda</h3>
+            <p>A cold can of your favorite soda.</p>
+            <span class="price">$1.99</span>
+          </li>
+          <li>
+            <h3>Water</h3>
+            <p>A bottle of refreshing water.</p>
+            <span class="price">$0.99</span>
+          </li>
+          <li>
+            <h3>Juice</h3>
+            <p>A bottle of fresh-squeezed juice.</p>
+            <span class="price">$2.99</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
 {% endblock %}
