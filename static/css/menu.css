@@ -3,7 +3,16 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
 }
-
+img {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+.water {
+  width: 70%;
+}
+.coca{
+  width: 40%;
+}
 header {
   background-color: #FFA500;
   color: white;
@@ -22,7 +31,7 @@ section {
 
 h2 {
   font-size: 24px;
-  margin-bottom: 20px;
+  padding-bottom: 50px;
 }
 
 ul.menu {
@@ -36,7 +45,7 @@ ul.menu {
 
 li {
   width: calc(33.33% - 20px);
-  margin-bottom: 20px;
+  padding-bottom: 25px;
 }
 
 h3 {
