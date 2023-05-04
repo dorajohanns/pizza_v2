@@ -1,0 +1,49 @@
+
+header {
+    background-color: #FFA500;
+    color: white;
+    padding: 20px;
+}
+
+img {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+header {
+  background-color: #FFA500;
+  color: white;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+ul.offers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+li {
+  width: calc(33.33% - 20px);
+  padding-bottom: 25px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.price {
+  float: right;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
