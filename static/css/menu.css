@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
 }
-img {
+.menu-img {
   width: 100%;
   border-radius: 20px 20px 0 0;
 }
@@ -13,7 +13,7 @@ img {
 .coca{
   width: 40%;
 }
-header {
+.menu-header {
   background-color: #FFA500;
   color: white;
   padding: 20px;
@@ -43,7 +43,7 @@ ul.menu {
   justify-content: space-between;
 }
 
-li {
+.menu-li {
   width: calc(33.33% - 20px);
   padding-bottom: 25px;
 }

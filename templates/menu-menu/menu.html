@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <header>
+    <header class="menu-header">
       <h1>Menu</h1>
     </header>
     <main>
@@ -11,8 +11,8 @@
 
         <ul class="menu">
             {% for pizza in pizzas %}
-            <li>
-                <img src="{{ pizza.photo }}" alt={{ pizza.name }}>
+            <li class="menu-li">
+                <img class="menu-img" src="{{ pizza.photo }}" alt={{ pizza.name }}>
                 <h3>{{ pizza.name }}</h3>
                 <p>{{ pizza.desc }} </p>
                 <span class="price">{{ pizza.price}}.</span>
@@ -23,20 +23,20 @@
       <section>
         <h2>Drinks</h2>
         <ul class="menu">
-          <li>
+          <li class="menu-li">
             <img src="../../static/images/coke.png" alt="Hawaiian Pizza" class="coca">
             <h3>Coca cola</h3>
             <p>A cold can of your bigthor fav soda.</p>
             <span class="price">$1.99</span>
           </li>
-          <li>
+          <li class="menu">
             <img src="../../static/images/vatn.jpg" alt="Hawaiian Pizza" class="water">
 
             <h3>Water</h3>
             <p>A bottle of refreshing water.</p>
             <span class="price">$0.99</span>
           </li>
-          <li>
+          <li class="menu">
             <h3>Juice</h3>
             <p>A bottle of fresh-squeezed juice.</p>
             <span class="price">$2.99</span>
