@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<html>
 
-  <body>
     <header>
       <h1>Menu</h1>
     </header>
@@ -12,24 +10,14 @@
         <h2>Pizzas</h2>
 
         <ul class="menu">
-          <li>
-            <img src="../../static/images/pepperoni.jpg" alt="Pepperoni Pizza">
-            <h3>Pepperoni Pizza</h3>
-            <p>A classic pizza topped with tomato sauce, mozzarella cheese, and pepperoni slices.</p>
-            <span class="price">1299 kr.</span>
-          </li>
-          <li>
-            <img src="../../static/images/margarita.jpg" alt="Margherita Pizza">
-            <h3>Margherita Pizza</h3>
-            <p>A simple pizza topped with tomato sauce, Icelandic mozzarella cheese.</p>
-            <span class="price">1499 kr.</span>
-          </li>
-          <li>
-            <img src="../../static/images/ananas.jpg" alt="Hawaiian Pizza">
-            <h3>Hawaiian Pizza</h3>
-            <p>A pizza topped with tomato sauce, mozzarella cheese, ham, and pineapple.</p>
-            <span class="price">1599 kr.</span>
-          </li>
+            {% for pizza in pizzas %}
+            <li>
+                <img src="{{ pizza.photo }}" alt={{ pizza.name }}>
+                <h3>{{ pizza.name }}</h3>
+                <p>{{ pizza.desc }} </p>
+                <span class="price">{{ pizza.price}}.</span>
+            </li>
+            {% endfor %}
         </ul>
       </section>
       <section>
@@ -55,7 +43,5 @@
           </li>
         </ul>
       </section>
-    </main>
-  </body>
-</html>
+
 {% endblock %}
