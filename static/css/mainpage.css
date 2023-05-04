@@ -1,0 +1,38 @@
+#body {
+    background-color: white;
+    min-height: 800px;
+    overflow: scroll;
+
+
+}
+
+/*#halfpizza {
+    width: 25%;
+    float: right;
+    margin-left: 50px;
+}*/
+
+#halfpizza {
+    position: absolute;
+    top: 15%;
+    right: 0;
+    width: 25%;
+    margin-top: 50px;
+}
+
+#container {
+    background-color: tomato;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 70%;
+    padding: 250px;
+    margin-top: 75px;
+
+}
+
+#text {
+    font-size: 42px;
+    font-family: "Arial";
+    font-weight: 600;
+}
+
