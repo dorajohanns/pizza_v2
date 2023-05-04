@@ -2,10 +2,23 @@
 
 {% block content %}
 
-    <h1>Hello this is the offers page</h1>
-    {% for offer in offers %}
-        <h4>{{ offer.name }} </h4>
-        <h5>{{ offer.description }}</h5>
-    {% endfor %}
+    <header>
+      <h1>Special Offers</h1>
+    </header>
+
+    <main>
+      <section>
+        <ul class="offers">
+            {% for offer in offers %}
+            <li>
+                <img class="offer-image" src="../static/images/{{offer.picture}}" alt="{{ offer.description }}">
+                <h3>{{ offer.name }}</h3>
+                <p>{{ offer.description }} </p>
+                <span class="price">{{ offer.price}}.</span>
+            </li>
+            {% endfor %}
+        </ul>
+      </section>
+    </main>
 
 {% endblock %}

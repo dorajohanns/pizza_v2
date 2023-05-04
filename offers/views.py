@@ -3,8 +3,11 @@ from django.http import HttpResponse
 # Create your views here.
 
 offers = [
-    {'name': 'tvennutilboð', 'description': '2 stórar pizzur og gos á 3000kr', 'price': 3000},
-    {'name': 'fimmtudagstilboð', 'description': 'pizza með tveimur áleggstegundum á 1000kr', 'price': 1000}
+    {'name': 'Two for One', 'description': 'Get 2 large pizzas for the price of one ', 'price': 3000, 'picture': 'tvooffer.jpeg'},
+    {'name': 'Tuesday Offer', 'description': 'Pizza with two toppings for 1000kr', 'price': 1000, 'picture': 'margarita.jpg'},
+    {'name': 'Offer2', 'description': 'Pizza with two toppings for 1000kr Pizza with two toppings for 1000kr Pizza with two toppings for 1000kr', 'price': 1000, 'picture': 'margarita.jpg'},
+    {'name': 'Offer3', 'description': 'Pizza with two toppings for 1000kr Pizza with two toppings for 1000kr', 'price': 1000, 'picture': 'margarita.jpg'},
+    {'name': 'Offer3', 'description': 'Pizza with two toppings for 1000kr Pizza with two toppings for 1000kr', 'price': 1000, 'picture': 'margarita.jpg'}
 ]
 
 def index(request):
