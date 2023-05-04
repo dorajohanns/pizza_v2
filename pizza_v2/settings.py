@@ -82,7 +82,7 @@ DATABASES = {
         'USER': 'pizzalair-db-user',
         'PASSWORD': ')GZKvIo%gAXdu%Si',
         'HOST':'34.88.126.226',
-        'PORT':'5432'
+        'PORT':'5432',
     }
 }
 
