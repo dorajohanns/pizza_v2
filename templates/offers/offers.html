@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <header>
+    <header class="offer-header">
       <h1>Special Offers</h1>
     </header>
 
@@ -10,8 +10,8 @@
       <section>
         <ul class="offers">
             {% for offer in offers %}
-            <li>
-                <img class="offer-image" src="../static/images/{{offer.picture}}" alt="{{ offer.description }}">
+            <li class="offer-li">
+                <img class="offer-img" src="../static/images/{{offer.picture}}" alt="{{ offer.description }}">
                 <h3>{{ offer.name }}</h3>
                 <p>{{ offer.description }} </p>
                 <span class="price">{{ offer.price}}.</span>
