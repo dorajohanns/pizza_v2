@@ -12,9 +12,9 @@
         <ul class="menu">
             {% for pizza in pizzas %}
             <li class="menu-li">
-                <img class="menu-img" src="{{ pizza.photo }}" alt={{ pizza.name }}>
+                <img class="menu-img" src="../../static/images/{{pizza.image}}" alt={{ pizza.name }}>
                 <h3>{{ pizza.name }}</h3>
-                <p>{{ pizza.desc }} </p>
+                <p>{{ pizza.description }} </p>
                 <span class="price">{{ pizza.price}}.</span>
             </li>
             {% endfor %}
