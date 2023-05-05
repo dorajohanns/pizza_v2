@@ -8,6 +8,8 @@
     text-decoration: underline;
 }
 
+
+
 #subnav {
     background-color: white;
     justify-content: center;
@@ -23,8 +25,8 @@
     font-weight: bold;
 }
 
-
 img {
   width: 100%;
   border-radius: 20px 20px 0 0;
 }
+

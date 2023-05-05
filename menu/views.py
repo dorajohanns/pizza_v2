@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from menu.models import Pizza
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 # Create your views here.
 
