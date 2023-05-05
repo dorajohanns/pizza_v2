@@ -2,7 +2,8 @@
 
 {% block content %}
     <header class="detail-header">
-      <h1>{{ pizza.name }}</h1>
+        <a class="back-logo-header" href="{% url 'menu' %}"><img src="../../static/images/backyellow.jpg" alt="back icon"></a>
+        <h1>Back to menu</h1>
     </header>
     <div class="detail-container">
         <img class="detail-img" src="../../static/images/{{ pizza.image }}">
