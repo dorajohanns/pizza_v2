@@ -32,6 +32,7 @@ section {
 h2 {
   font-size: 24px;
   padding-bottom: 50px;
+  color: black;
 }
 
 ul.menu {
@@ -46,18 +47,22 @@ ul.menu {
 .menu-li {
   width: calc(33.33% - 20px);
   padding-bottom: 25px;
+  color: black;
 }
 
 h3 {
   font-size: 18px;
   margin-bottom: 10px;
+  color: black;
 }
 
 p {
   margin-bottom: 10px;
+
 }
 
 .price {
   float: right;
   font-weight: bold;
+  color: black;
 }

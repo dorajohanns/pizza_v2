@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <header class="detail-header">
+        <a class="back-logo-header" href="{% url 'menu' %}"><img src="../../static/images/backyellow.jpg" alt="back icon"></a>
+        <h1>Back to menu</h1>
+    </header>
+    <div class="detail-container">
+        <img class="detail-img" src="../../static/images/{{ pizza.image }}">
+        <div class="detail-text-container">
+            <p class="pizza-title">{{ pizza.name }} Pizza!</p>
+            <p class="topping-title">Toppings:</p>
+            <p>{{ pizza.toppings }}</p>
+            <p class="detail-price">{{ pizza.price }}kr</p>
+            <button class="basket-btn">Add to basket</button>
+        </div>
+    </div>
+{% endblock %}
