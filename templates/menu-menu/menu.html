@@ -1,55 +1,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="input-group">
-        <input type="search" class="form-control" id="search-box" placeholder="Search for pizza....">
-        <div class="input-group-btn">
-            <button type="button" id="search-btn" class="btn btn-default">Search</button>
-        </div>
-    </div>
 
     <header class="menu-header">
       <h1>Menu</h1>
     </header>
     <main>
-      <section>
         <h2>Pizzas</h2>
 
-        <ul class="menu">
+        <div class="input-group">
+            <input type="search" class="form-control" id="search-box" placeholder="Search for pizza....">
+            <div class="input-group-btn">
+                <button type="button" id="search-btn" class="btn btn-default">Search</button>
+            </div>
+        </div>
+
+        <div class="menu">
             {% for pizza in pizzas %}
-            <li class="menu-li">
+            <div class="menu-div">
                 <a href="/menu/{{ pizza.id }}">
                     <img class="menu-img" src="../../static/images/{{pizza.image}}" alt={{ pizza.name }}>
                     <h3>{{ pizza.name }}</h3>
                     <p>{{ pizza.description }} </p>
                     <span class="price">{{ pizza.price}}.</span>
                 </a>
-            </li>
+            </div>
             {% endfor %}
-        </ul>
-      </section>
-      <section>
-        <h2>Drinks</h2>
-        <ul class="menu">
-          <li class="menu-li">
-            <img src="../../static/images/coke.png" alt="Hawaiian Pizza" class="coca">
-            <h3>Coca cola</h3>
-            <p>A cold can of your bigthor fav soda.</p>
-            <span class="price">$1.99</span>
-          </li>
-          <li class="menu">
-            <img src="../../static/images/vatn.jpg" alt="Hawaiian Pizza" class="water">
+        </div>
+    </main>
 
-            <h3>Water</h3>
-            <p>A bottle of refreshing water.</p>
-            <span class="price">$0.99</span>
-          </li>
-          <li class="menu">
-            <h3>Juice</h3>
-            <p>A bottle of fresh-squeezed juice.</p>
-            <span class="price">$2.99</span>
-          </li>
-        </ul>
-      </section>
+
 
 {% endblock %}
