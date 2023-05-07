@@ -4,15 +4,15 @@ $(document).ready(function(){
         e.preventDefault();
         var searchText = $('#search-box').val();
         $.ajax({
-            url: '/pizzas?search_filter='+ searchText,
+            url: '/menu?search_filter='+ searchText,
             type: 'GET',
             success:function(resp){
                 var newHtml = resp.data.map(d => {
-                    return `<div class="well pizza">
-                                <a href="/pizzas/${d.id}">
-                                    <img class="pizza-img" src="${d.image}"/>
+                    return `<div class="well menu">
+                                <a href="/menu/${d.id}">
+                                    <img class="menu-img" src="${d.image}"/>
                                     <h4>$(d.name)</h4>
-                                    <p>${d.toppings}</p>
+                                    <p>${d.description}</p>
                                 </a>
                             </div`
                 });
