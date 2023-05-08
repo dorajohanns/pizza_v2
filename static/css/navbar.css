@@ -8,8 +8,6 @@
     text-decoration: underline;
 }
 
-
-
 #subnav {
     background-color: white;
     justify-content: center;
@@ -29,7 +27,6 @@ img {
   width: 100%;
   border-radius: 20px 20px 0 0;
 }
-
 
 .overlay {
   height: 100%;
@@ -61,7 +58,6 @@ img {
   display: block;
   transition: 0.3s;
 }
-
 
 .overlay a:hover, .overlay a:focus {
   color: #f1f1f1;
@@ -154,4 +150,28 @@ h3#priceSum {
     padding-right: 5px;
     border-radius: 20px;
     font-size: 12px;
+}
+
+#clear-cart {
+    display: none;
+}
+
+#clear-cart-btn {
+    background-color: #FFA500;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    padding: 15px 32px;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+#quantity-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
