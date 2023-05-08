@@ -99,6 +99,7 @@ img {
     padding: 20px;
     background-color: rgb(166, 57, 57);
     width: 80%;
+    margin-bottom: 30px;
 }
 
 #delbtn {
@@ -127,11 +128,29 @@ a.shop-btn {
     background-color: rgb(166, 57, 57);
     border-radius: 5px;
     border: none;
-    display: none;
     font-size: 20px;
     padding: 15px 32px;
     color: white;
     font-family: Arial, sans-serif;
     margin-top: 10px;
     margin-left: 20px;
+}
+
+h3#priceSum {
+    font-weight: bold;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+#non-empty-cart {
+    display: none;
+}
+
+#basket-item-nr {
+    display: none;
+    background-color: #FFA500;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20px;
+    font-size: 12px;
 }
