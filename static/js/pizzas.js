@@ -10,17 +10,17 @@ $(document).ready(function(){
                 var newHtml = resp.data.map(d => {
                     return `<div class="well menu">
                                 <a href="/menu/${d.id}">
-                                    <img class="menu-img" src="${d.image}"/>
+                                    <img class="menu-img" src="../../static/images/${d.image}"/>
                                     <h4>$(d.name)</h4>
                                     <p>${d.description}</p>
                                 </a>
-                            </div`
+                            </div>`
                 });
-                $('.pizzas').html(newHtml.join(''));
+                $('.menu').html(newHtml.join(''));
                 $('#search-box').val('');
             },
             error:function(xhr,status,error){
-                console.log(error);
+                console.error(error);
             }
         })
     });

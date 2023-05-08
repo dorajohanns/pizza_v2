@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
     <header class="menu-header">
-      <h1>Menu</h1>
+        <h1>Menu</h1>
     </header>
     <main>
         <h2>Pizzas</h2>
-
         <div class="input-group">
             <input type="search" class="form-control" id="search-box" placeholder="Search for pizza....">
             <div class="input-group-btn">
@@ -17,18 +15,10 @@
 
         <div class="menu">
             {% for pizza in pizzas %}
-            <div class="menu-div">
-                <a href="/menu/{{ pizza.id }}">
-                    <img class="menu-img" src="../../static/images/{{pizza.image}}" alt={{ pizza.name }}>
-                    <h3>{{ pizza.name }}</h3>
-                    <p>{{ pizza.description }} </p>
-                    <span class="price">{{ pizza.price}}.</span>
-                </a>
-            </div>
+                {% include 'menu-menu/single_pizza.html' with pizza=pizza %}
             {% endfor %}
         </div>
+
     </main>
-
-
 
 {% endblock %}
