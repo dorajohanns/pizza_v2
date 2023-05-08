@@ -11,8 +11,9 @@ $(document).ready(function(){
                     return `<div class="well menu">
                                 <a href="/menu/${d.id}">
                                     <img class="menu-img" src="../../static/images/${d.image}"/>
-                                    <h4>$(d.name)</h4>
-                                    <p>${d.description}</p>
+                                    <h4 class="pizza-name">${d.name}</h4>
+                                    <p class="pizza-top">${d.toppings}</p>
+                                    <span class="price">${d.price}</span>
                                 </a>
                             </div>`
                 });

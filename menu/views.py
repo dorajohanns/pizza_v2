@@ -14,6 +14,7 @@ def index(request):
             'name': x.name,
             'toppings': x.toppings,
             'image': x.image,
+            'price': x.price,
         }for x in Pizza.objects.filter(name__icontains=search_filter)]
 
         return JsonResponse({'data': pizzas})
