@@ -12,7 +12,7 @@
             <p class="topping-title">Toppings:</p>
             <p>{{ pizza.toppings }}</p>
             <p class="detail-price">{{ pizza.price }}kr</p>
-            <button class="basket-btn" onclick="addToBasket({{ pizza.id }})">Add to basket</button>
+            <button class="basket-btn" onclick="addToBasket([{{ pizza.id }}, '{{ pizza.name }}', '{{ pizza.image }}', {{ pizza.price }}])">Add to basket</button>
         </div>
     </div>
 {% endblock %}
