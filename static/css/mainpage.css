@@ -31,14 +31,11 @@
     font-family: Arial, sans-serif;
     margin-top: 10px;
     margin-left: 20px;
-
-
 }
 
 #orderbutton:active{
     background-color: #FFA500;
     color: white;
-
 }
 /*container {
     border-width:4px;
