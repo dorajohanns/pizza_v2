@@ -12,6 +12,7 @@ const removeFromBasket = (id) => {
 const updateBasket = () => {
     const cart = document.getElementById("cart-pizzas");
     cart.innerHTML = "";
+    let priceSum = 0;
 
     Object.keys(sessionStorage).map((key) => {
         let pizzaArray = sessionStorage.getItem(key).split(",");
@@ -33,17 +34,25 @@ const updateBasket = () => {
         pizzadiv.appendChild(delbtn);
         pizzadiv.id = "pizza-container"
         cart.appendChild(pizzadiv);
+        priceSum += Number(pizzaArray[3].replace(']', ''));
     })
+    const priceTag = document.getElementById("priceSum");
+    priceTag.textContent = "Total: " + priceSum + " Kr";
     basketStatus();
 }
 
 const basketStatus = () => {
     if (Object.keys(sessionStorage).length === 0) {
-        document.getElementById("empty-cart").style.display = "block"
-        document.getElementById("proceed-btn").style.display = "none"
+        document.getElementById("empty-cart").style.display = "block";
+        document.getElementById("non-empty-cart").style.display = "none";
+        document.getElementById("basket-item-nr").style.display = "none";
+
     } else {
-        document.getElementById("empty-cart").style.display = "none"
-        document.getElementById("proceed-btn").style.display = "inline-block"
+        document.getElementById("empty-cart").style.display = "none";
+        document.getElementById("non-empty-cart").style.display = "inline-block";
+        const basketQuantity = document.getElementById("basket-item-nr")
+        basketQuantity.textContent = Object.keys(sessionStorage).length;
+        basketQuantity.style.display = "block";
     }
 }
 
@@ -55,3 +64,5 @@ function openNav() {
 function closeNav() {
   document.getElementById("cartNav").style.width = "0%";
 }
+
+basketStatus()
