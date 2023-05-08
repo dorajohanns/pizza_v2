@@ -7,18 +7,11 @@
     </header>
 
     <main>
-      <section>
-        <ul class="offers">
+        <div class="offers">
             {% for offer in offers %}
-            <li class="offer-li">
-                <img class="offer-img" src="../../static/images/margarita.jpg" alt="{{ offer.description }}">
-                <h3>{{ offer.name }}</h3>
-                <p>{{ offer.description }} </p>
-                <span class="price">{{ offer.price}}.</span>
-            </li>
+                {% include 'offers/single_offer.html' with offer=offer %}
             {% endfor %}
-        </ul>
-      </section>
+        </div>
     </main>
 
 {% endblock %}
