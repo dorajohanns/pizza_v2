@@ -29,4 +29,9 @@ const updateBasket = () => {
 
 function openNav() {
   document.getElementById("cartNav").style.width = "30%";
+  updateBasket();
+}
+
+function closeNav() {
+  document.getElementById("cartNav").style.width = "0%";
 }
