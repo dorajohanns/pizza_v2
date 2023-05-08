@@ -44,7 +44,12 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
       <h1>Cart</h1>
+      <div id="empty-cart">
+          <h3>There is nothing in your cart...</h3>
+          <a href="{% url 'menu' %}" onclick="closeNav()" class="shop-btn">Shop</a>
+      </div>
       <div id="cart-pizzas"></div>
+      <button id="proceed-btn">Proceed</button>
   </div>
 </div>
 

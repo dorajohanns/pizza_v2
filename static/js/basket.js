@@ -12,6 +12,7 @@ const removeFromBasket = (id) => {
 const updateBasket = () => {
     const cart = document.getElementById("cart-pizzas");
     cart.innerHTML = "";
+
     Object.keys(sessionStorage).map((key) => {
         let pizzaArray = sessionStorage.getItem(key).split(",");
         let pizzadiv = document.createElement("div");
@@ -33,6 +34,17 @@ const updateBasket = () => {
         pizzadiv.id = "pizza-container"
         cart.appendChild(pizzadiv);
     })
+    basketStatus();
+}
+
+const basketStatus = () => {
+    if (Object.keys(sessionStorage).length === 0) {
+        document.getElementById("empty-cart").style.display = "block"
+        document.getElementById("proceed-btn").style.display = "none"
+    } else {
+        document.getElementById("empty-cart").style.display = "none"
+        document.getElementById("proceed-btn").style.display = "inline-block"
+    }
 }
 
 function openNav() {
@@ -43,4 +55,3 @@ function openNav() {
 function closeNav() {
   document.getElementById("cartNav").style.width = "0%";
 }
-
