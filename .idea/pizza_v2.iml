@@ -18,6 +18,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Python 3.9 (pizza_v2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="@types/jquery" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
