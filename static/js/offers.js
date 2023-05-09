@@ -1,4 +1,7 @@
 $(document).ready(function (){
+    var sortOrder = 'asc';
+    var sortByPriceOrder = 'asc';
+
     $('#offers-search-btn').on('click',function (e){
         e.preventDefault();
         var searchText = $('#offers-search-box').val();
@@ -7,6 +10,8 @@ $(document).ready(function (){
             type: 'GET',
             success:function (resp){
                 var data = resp.data;
+
+                // Sort by name
                 data.sort(function(a, b) {
                     var nameA = a.name.toUpperCase();
                     var nameB = b.name.toUpperCase();
@@ -28,6 +33,18 @@ $(document).ready(function (){
                     // names must be equal
                     return 0;
                 });
+
+                // Sort by price
+                data.sort(function(a, b) {
+                    var priceA = a.price;
+                    var priceB = b.price;
+                    if (sortByPriceOrder === 'asc') {
+                        return priceA - priceB;
+                    } else {
+                        return priceB - priceA;
+                    }
+                });
+
                 var newHtml = data.map(d => {
                     return `<div class="well offer-div">
                                 <a href="/offers/${d.id}">
@@ -46,12 +63,13 @@ $(document).ready(function (){
             }
         })
     });
+
     $('#offers-reset-btn').on('click', function(e) {
         e.preventDefault();
         location.reload();
     });
 
-    // add event listener for sort button
+    // add event listener for sort button by name
     $('#offers-sort-btn').on('click', function(e) {
         e.preventDefault();
         if (sortOrder === 'asc') {
@@ -63,7 +81,9 @@ $(document).ready(function (){
         }
         $('#offers-search-btn').click();
     });
-        $('#offers-sort-by-price-btn').on('click', function(e) {
+
+    // add event listener for sort button by price
+    $('#offers-sort-by-price-btn').on('click', function(e) {
         e.preventDefault();
         if (sortByPriceOrder === 'asc') {
             sortByPriceOrder = 'desc';
@@ -74,6 +94,5 @@ $(document).ready(function (){
         }
         $('#offers-search-btn').click();
     });
-
 });
 

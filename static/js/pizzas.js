@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var sortOrder = 'asc';
-
+    var sortByPriceOrder = 'asc';
     $('#search-btn').on('click',function(e){
         e.preventDefault();
         var searchText = $('#search-box').val();
@@ -9,28 +9,36 @@ $(document).ready(function(){
             type: 'GET',
             success:function(resp){
                 var data = resp.data;
-                // sort data by name
-                data.sort(function(a, b) {
-                    var nameA = a.name.toUpperCase();
-                    var nameB = b.name.toUpperCase();
-                    if (sortOrder === 'asc') {
+                if (sortOrder === 'asc') {
+                    data.sort(function(a, b) {
+                        var nameA = a.name.toUpperCase();
+                        var nameB = b.name.toUpperCase();
                         if (nameA < nameB) {
-                            return -1;
-                        }
+                            return -1;}
                         if (nameA > nameB) {
-                            return 1;
-                        }
-                    } else {
+                            return 1;}
+                        return 0;
+                    });
+                } else {
+                    data.sort(function(a, b) {
+                        var nameA = a.name.toUpperCase();
+                        var nameB = b.name.toUpperCase();
                         if (nameA < nameB) {
-                            return 1;
-                        }
+                            return 1;}
                         if (nameA > nameB) {
-                            return -1;
-                        }
-                    }
-                    // names must be equal
-                    return 0;
-                });
+                            return -1;}
+                        return 0;
+                    });
+                }
+                if (sortByPriceOrder === 'asc') {
+                    data.sort(function(a, b) {
+                        return a.price - b.price;
+                    });
+                } else {
+                    data.sort(function(a, b) {
+                        return b.price - a.price;
+                    });
+                }
                 var newHtml = data.map(d => {
                     return `<div class="well menu">
                                 <a href="/menu/${d.id}">
@@ -55,7 +63,6 @@ $(document).ready(function(){
         location.reload();
     });
 
-    // add event listener for sort button
     $('#sort-btn').on('click', function(e) {
         e.preventDefault();
         if (sortOrder === 'asc') {
@@ -67,7 +74,8 @@ $(document).ready(function(){
         }
         $('#search-btn').click();
     });
-        $('#sort-by-price-btn').on('click', function(e) {
+
+    $('#sort-by-price-btn').on('click', function(e) {
         e.preventDefault();
         if (sortByPriceOrder === 'asc') {
             sortByPriceOrder = 'desc';
@@ -78,6 +86,4 @@ $(document).ready(function(){
         }
         $('#search-btn').click();
     });
-
-
 });
