@@ -1,6 +1,11 @@
 const addToBasket = (list) => {
-    if (localStorage.getItem(list[0]) === null) {
+    if (sessionStorage.getItem(list[0]) == null) {
+        list.push(1)
         sessionStorage.setItem(list[0], JSON.stringify(list));
+    } else {
+        let newList = JSON.parse(sessionStorage.getItem(list[0]));
+        newList[4] += 1
+        sessionStorage.setItem(list[0], JSON.stringify(newList));
     }
     updateBasket();
     openNav();
@@ -17,28 +22,34 @@ const updateBasket = () => {
     let priceSum = 0;
 
     Object.keys(sessionStorage).map((key) => {
-        let pizzaArray = sessionStorage.getItem(key).split(",");
+        let pizzaArray = JSON.parse(sessionStorage.getItem(key))
+        console.log(pizzaArray);
 
         let pizzadiv = document.createElement("div");
 
         let nametag = document.createElement("h1");
-        nametag.textContent = pizzaArray[1].replaceAll('"', '');
+        nametag.textContent = pizzaArray[1]
 
         let imgtag = document.createElement("img");
         imgtag.alt = pizzaArray[1];
-        imgtag.src = "../static/images/" + pizzaArray[2].replaceAll('"', '');
+        imgtag.src = "../static/images/" + pizzaArray[2]
 
         let priceTag = document.createElement("h3");
-        priceTag.textContent = pizzaArray[3].replace(']', '') + " Kr";
+        priceTag.textContent = pizzaArray[3] + " Kr";
 
         let quantityCounter = document.createElement("div");
-        quantityCounter.id = "quantity-counter"
+        quantityCounter.id = "quantity-counter";
         let minus = document.createElement("button");
-        minus.textContent = "-"
-        let quantity = document.createElement("p");
-        quantity.textContent = 1;
+        minus.textContent = "-";
+        minus.onclick = () => decreaseQuantity(pizzaArray[0]);
+        minus.className = "quantity-btn"
+        let quantity = document.createElement("span");
+        quantity.textContent = pizzaArray[4];
+        quantity.className = "quantity"
         let plus = document.createElement("button");
         plus.textContent = "+";
+        plus.onclick = () => increaseQuantity(pizzaArray[0]);
+        plus.className = "quantity-btn"
         quantityCounter.appendChild(minus);
         quantityCounter.appendChild(quantity);
         quantityCounter.appendChild(plus);
@@ -57,7 +68,7 @@ const updateBasket = () => {
 
         pizzadiv.id = "pizza-container"
         cart.appendChild(pizzadiv);
-        priceSum += Number(pizzaArray[3].replace(']', ''));
+        priceSum += (pizzaArray[3] * pizzaArray[4]);
     });
 
     const priceTag = document.getElementById("priceSum");
@@ -70,8 +81,22 @@ const clearCart = () => {
     updateBasket();
 }
 
-const incrementQuantity = () => {
-    console.log("klára á morgun");
+const decreaseQuantity = (id) => {
+    const pizzaArray = JSON.parse(sessionStorage.getItem(id));
+    if (pizzaArray[4] == 1) {
+        removeFromBasket(id)
+    } else {
+        pizzaArray[4] -= 1
+        sessionStorage.setItem(id, JSON.stringify(pizzaArray));
+    }
+    updateBasket()
+}
+
+const increaseQuantity = (id) => {
+    const pizzaArray = JSON.parse(sessionStorage.getItem(id));
+    pizzaArray[4] += 1
+    sessionStorage.setItem(id, JSON.stringify(pizzaArray));
+    updateBasket()
 }
 
 const basketStatus = () => {
