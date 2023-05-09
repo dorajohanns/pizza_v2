@@ -4,8 +4,7 @@
     <header class="menu-header">
         <h1 class="menu-text">Menu</h1>
     </header>
-    <main>
-        <h2 class="pizzas-text">Pizzas</h2>
+    <main id="search-bar-div">
         <div class="input-group">
             <input type="search" class="form-control" id="search-box" placeholder="Search for pizza....">
             <div class="input-group-btn">
@@ -16,11 +15,15 @@
             </div>
         </div>
 
-        <div class="menu">
-            {% for pizza in pizzas %}
-                {% include 'menu-menu/single_pizza.html' with pizza=pizza %}
-            {% endfor %}
-        </div>
+        <body id="menu-body">
+            <main>
+                <div class="menu">
+                    {% for pizza in pizzas %}
+                        {% include 'menu-menu/single_pizza.html' with pizza=pizza %}
+                    {% endfor %}
+                </div>
+            </main>
+        </body>
 
     </main>
 
