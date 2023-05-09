@@ -5,13 +5,14 @@
     <header class="offer-header">
       <h1 class="offer-text">Special Offers</h1>
     </header>
-
-    <main>
-        <div class="offers">
-            {% for offer in offers %}
-                {% include 'offers/single_offer.html' with offer=offer %}
-            {% endfor %}
-        </div>
-    </main>
+    <body id="offer-body">
+        <main>
+            <div class="offers">
+                {% for offer in offers %}
+                    {% include 'offers/single_offer.html' with offer=offer %}
+                {% endfor %}
+            </div>
+        </main>
+    </body>
 
 {% endblock %}

@@ -1,11 +1,10 @@
 
 <div class="offer-div">
-    <a href="/offers/{{ offer.id }}">
+    <a id="a-href-style" href="/offers/{{ offer.id }}">
         <img class="offer-img" src="../../static/images/margarita.jpg" alt={{ offer.name }}>
-            <h3 class="offer-name">{{ offer.name }}</h3>
-            <p class="offer-description">{{ offer.description }}</p>
-                <div class="name-price-container-offers">
-                    <span class="price">{{ offer.price }}.</span>
-                </div>
+        <h3 class="offer-name">{{ offer.name }}</h3>
+        <p class="offer-description">{{ offer.description }}</p>
+        <span class="price">${{ offer.price }}</span>
+
     </a>
 </div>

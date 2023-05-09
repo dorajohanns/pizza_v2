@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <header class="detail-header">
+    <header class="detail-header-offer">
         <a class="back-logo-header" href="{% url 'offers' %}"><img src="../../static/images/backyellow.jpg" alt="back icon"></a>
         <h1>Back to Offers</h1>
     </header>
-    <div class="detail-container">
-        <img class="detail-img" src="../../static/images/margarita.jpg">
-        <div class="detail-text-container">
-            <p class="offer-title">{{ offer.name }} Offer!</p>
+    <div class="detail-container-offer">
+        <img class="detail-img-offer" src="../../static/images/margarita.jpg">
+        <div class="detail-text-container-offer">
+            <p class="offer-title">{{ offer.name }}</p>
             <p class="description">{{ offer.description }}</p>
-            <p class="offer-price">{{ offer.price }}kr</p>
+            <p class="offer-price">${{ offer.price }}</p>
             <button class="basket-btn" onclick="addToBasket({{ offer.id }})">Add to basket</button>
         </div>
     </div>
