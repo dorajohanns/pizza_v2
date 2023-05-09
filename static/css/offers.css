@@ -9,7 +9,25 @@
   background-color: #FFA500;
   color: white;
   padding: 20px;
-
+}
+#offers-search-box{
+  border-color: #c05353;
+}
+#offers-search-btn {
+  background-color: #c05353;
+  border-radius: 0 5px 5px 0;
+}
+#offers-reset-btn{
+  background-color: #c05353;
+  border-radius: 5px 5px 5px 5px;
+}
+#offers-sort-btn{
+  background-color: #c05353;
+  border-radius: 5px 5px 5px 5px;
+}
+#offers-sort-by-price-btn{
+  background-color: #c05353;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .offer-text{ /*text in header*/

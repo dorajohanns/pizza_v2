@@ -8,6 +8,16 @@
 
     <body id="offer-body">
         <main>
+            <div class="input-group">
+            <input type="search" class="form-control" id="offers-search-box" placeholder="Search for pizza....">
+            <div class="input-group-btn">
+                <button type="button" id="offers-search-btn" class="btn btn-default">Search</button>
+                <button type="button" id="offers-sort-btn" class="btn btn-default">Ordered by A-Z</button>
+                <button type="button" id="offers-sort-by-price-btn" class="btn btn-default">Price: high to low</button>
+                <button type="button" id="offers-reset-btn" class="btn btn-default">Reset</button>
+            </div>
+        </div>
+
             <div class="offers">
                 {% for offer in offers %}
                     {% include 'offers/single_offer.html' with offer=offer %}
