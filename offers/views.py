@@ -1,10 +1,23 @@
 from django.shortcuts import render, get_object_or_404
 from offers.models import Offers
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
 def index(request):
+    if 'search_filter' in request.GET:
+        search_filter = request.GET['search_filter']
+        offers = [{
+            'id': x.id,
+            'name': x.name,
+            'desc': x.description,
+            'image': x.image,
+            'price': x.price,
+        }for x in Offers.objects.filter(name__icontains=search_filter)]
+
+        return JsonResponse({'data': offers})
+
     return render(request, 'offers/offers.html', context={
         'offers': Offers.objects.all().order_by('name')
     })
