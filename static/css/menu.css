@@ -1,66 +1,30 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
+
 .menu-img {
   width: 230px;
   height: 150px;
   border-radius: 20px 20px 0 0;
-}
-.water {
-  width: 70%;
-}
-.coca{
-  width: 40%;
 }
 .menu-header {
   background-color: #FFA500;
   color: white;
   padding: 20px;
 }
-.menu-text{
-  padding-left: 12%;
-}
 
-.pizzas-text{
-  color: black;
-  font-family: PP_ISFill,sans-serif;
-  font-size: 3rem;
+.menu-text{ /*text in header*/
   position: relative;
-  text-align: center;
+  animation-name: textHeader-menu;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
-
+@keyframes textHeader-menu {
+  0% {left: 0%}
+  100% {left: 12%}
+}
 
 main {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-}
-
-section {
-  margin-bottom: 40px;
-}
-
-h2 {
-  font-size: 24px;
-  padding-bottom: 50px;
-  color: black;
-}
-
-.menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.menu-div {
-  width: calc(33.33% - 20px);
-  padding-bottom: 25px;
-  color: black;
 }
 
 h3 {
@@ -72,13 +36,58 @@ h3 {
 
 p {
   margin-bottom: 10px;
-
 }
 
-.price {
+.menu {
+  list-style: none;
+  margin: 0;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.menu-div {
+  width: calc(33.33% - 50px);
+  padding-bottom: 25px;
+  color: black;
+}
+
+
+
+.price-pizza {
   float: right;
   font-weight: bold;
   color: black;
+}
+
+#a-href-style-menu{
+  text-decoration: none;
+}
+.pizza-name {
+  padding-top: 10px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.pizza-name:hover {
+  color: rgba(168, 17, 17, 0.72);
+}
+
+.pizza-topp {
+  color: rgba(168, 17, 17, 0.72);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+#menu-body {
+  background-color: #f3f0f0;
+}
+
+#search-bar-div {
+  padding-top: 20px;
+  background-color: #f3f0f0;
 }
 .input-group{
   padding-bottom: 25px;
@@ -102,7 +111,7 @@ p {
   background-color: #c05353;
   border-radius: 5px 5px 5px 5px;
 }
-.pizza-name{
+/*.pizza-name{
   color: tomato;
   text-decoration: none;
 }
@@ -112,10 +121,5 @@ p {
   text-decoration: none;
   float: left;
   max-width: 175px;
-}
+}*/
 
-.name-price-container{
-  display: flex;
-  width: 100%;
-  gap: 16%;
-}
