@@ -9,41 +9,40 @@ $(document).ready(function(){
             type: 'GET',
             success:function(resp){
                 var data = resp.data;
-                if (sortOrder === 'asc') {
-                    data.sort(function(a, b) {
-                        var nameA = a.name.toUpperCase();
-                        var nameB = b.name.toUpperCase();
+                data.sort(function(a, b) {
+                    var nameA = a.name.toUpperCase();
+                    var nameB = b.name.toUpperCase();
+                    if (sortOrder === 'asc') {
                         if (nameA < nameB) {
-                            return -1;}
+                            return -1;
+                        }
                         if (nameA > nameB) {
-                            return 1;}
-                        return 0;
-                    });
-                } else {
-                    data.sort(function(a, b) {
-                        var nameA = a.name.toUpperCase();
-                        var nameB = b.name.toUpperCase();
+                            return 1;
+                        }
+                    } else {
                         if (nameA < nameB) {
-                            return 1;}
+                            return 1;
+                        }
                         if (nameA > nameB) {
-                            return -1;}
-                        return 0;
-                    });
-                }
-                if (sortByPriceOrder === 'asc') {
+                            return -1;
+                        }
+                    }
+                    return 0;
+                });
+                 if (sortByPriceOrder === 'asc') {
                     data.sort(function(a, b) {
                         return a.price - b.price;
                     });
-                } else {
+                     } else {
                     data.sort(function(a, b) {
                         return b.price - a.price;
                     });
                 }
                 var newHtml = data.map(d => {
-                    return `<div class="well menu">
+                    return `<div class="menu-div">
                                 <a href="/menu/${d.id}">
                                     <img class="menu-img" src="../../static/images/${d.image}"/>
-                                    <h4 class="pizza-name">${d.name}</h4>
+                                    <h3 class="pizza-name">${d.name}</h3>
                                     <p class="pizza-top">${d.toppings}</p>
                                     <span class="price">${d.price}</span>
                                 </a>
@@ -87,3 +86,4 @@ $(document).ready(function(){
         $('#search-btn').click();
     });
 });
+
