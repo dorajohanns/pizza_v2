@@ -1,6 +1,42 @@
 $(document).ready(function(){
     var sortOrder = 'asc';
     var sortByPriceOrder = 'asc';
+
+    function sortByName(data) {
+        data.sort(function(a, b) {
+            var nameA = a.name.toUpperCase();
+            var nameB = b.name.toUpperCase();
+            if (sortOrder === 'asc') {
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+            } else {
+                if (nameA < nameB) {
+                    return 1;
+                }
+                if (nameA > nameB) {
+                    return -1;
+                }
+            }
+            return 0;
+        });
+    }
+
+    function sortByPrice(data) {
+        if (sortByPriceOrder === 'asc') {
+            data.sort(function(a, b) {
+                return a.price - b.price;
+            });
+        } else {
+            data.sort(function(a, b) {
+                return b.price - a.price;
+            });
+        }
+    }
+
     $('#search-btn').on('click',function(e){
         e.preventDefault();
         var searchText = $('#search-box').val();
@@ -9,36 +45,8 @@ $(document).ready(function(){
             type: 'GET',
             success:function(resp){
                 var data = resp.data;
-                if (sortOrder === 'asc') {
-                    data.sort(function(a, b) {
-                        var nameA = a.name.toUpperCase();
-                        var nameB = b.name.toUpperCase();
-                        if (nameA < nameB) {
-                            return -1;}
-                        if (nameA > nameB) {
-                            return 1;}
-                        return 0;
-                    });
-                } else {
-                    data.sort(function(a, b) {
-                        var nameA = a.name.toUpperCase();
-                        var nameB = b.name.toUpperCase();
-                        if (nameA < nameB) {
-                            return 1;}
-                        if (nameA > nameB) {
-                            return -1;}
-                        return 0;
-                    });
-                }
-                if (sortByPriceOrder === 'asc') {
-                    data.sort(function(a, b) {
-                        return a.price - b.price;
-                    });
-                } else {
-                    data.sort(function(a, b) {
-                        return b.price - a.price;
-                    });
-                }
+                sortByName(data);
+                sortByPrice(data);
                 var newHtml = data.map(d => {
                     return `<div class="well menu">
                                 <a href="/menu/${d.id}">
@@ -49,7 +57,7 @@ $(document).ready(function(){
                                 </a>
                             </div>`
                 });
-                $('.menu').html(newHtml.join(''));
+                $('#menu-container').html(newHtml.join('')); // updated line
                 $('#search-box').val('');
             },
             error:function(xhr,status,error){
@@ -87,3 +95,4 @@ $(document).ready(function(){
         $('#search-btn').click();
     });
 });
+
