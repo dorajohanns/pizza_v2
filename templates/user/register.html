@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Sign up now to buy our delicious pizza</h1>
-    <form class="registerForm" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" class="btn btn-primary" value="Sign up!">
-    </form>
+
+    <header class="register-header">
+        <h1 class="register-text">Sign up now to buy our delicious pizza</h1>
+    </header>
+    <body id="register-body">
+        <main>
+            <form class="registerForm" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input id="signup-button" type="submit" class="btn btn-primary" value="Sign up!">
+            </form>
+        </main>
+    </body>
 {% endblock%}
