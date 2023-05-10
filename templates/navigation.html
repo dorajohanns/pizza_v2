@@ -56,7 +56,9 @@
       <div id="cart-pizzas"></div>
       <div id="non-empty-cart">
           <h3 id="priceSum"></h3>
-          <button id="proceed-btn">Proceed</button>
+          <a href="{% url 'checkout' %}">
+              <button id="proceed-btn">Proceed to checkout</button>
+          </a>
       </div>
   </div>
 </div>
