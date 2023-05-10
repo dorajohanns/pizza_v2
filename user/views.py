@@ -16,15 +16,15 @@ def register(request):
 
 def profile(request):
     profile = Profile.objects.filter(user=request.user).first()
-    if request.method=='POST':
+    if request.method == 'POST':
         form = ProfileForm(instance=profile, data=request.POST)
         if form.is_valid():
             profile = form.save(commit=False)
             profile.user = request.user
             profile.save()
             return redirect('profile')
-    return render(request, 'user/profile.html',{
-        'form':ProfileForm(instance=profile)
+    return render(request, 'user/profile.html', {
+        'form': ProfileForm(instance=profile)
     })
 
 

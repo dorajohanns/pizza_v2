@@ -6,6 +6,10 @@
     font-size: 27px;
     color: white;
     text-decoration: underline;
+
+}
+li#nav-log-pro {
+    display: flex;
 }
 
 #subnav {
