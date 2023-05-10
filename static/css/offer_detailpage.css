@@ -58,3 +58,18 @@
     margin-top: 10px;
     margin-left: 20px;
 }
+
+#offer-pizza-container {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    align-items: center;
+}
+
+#pizzas-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
