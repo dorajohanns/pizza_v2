@@ -27,12 +27,13 @@
                   <a class="nav-link" href="{% url 'login' %}"><img src="../static/images/usericon.jpg" alt="user icon" width="35" height="35" class="d-inline-block align-text-top"></a>
               </li>
           {% endif %}
-      </ul>
-        <li class="nav-item">
+          <li class="nav-item">
             {% if user.is_authenticated %}
-                <img src="{{ user.profile.profile_image }}" />
+                <img src="{{ user.profile.profile_image }}"  class="profile-img"/>
             {% endif %}
-        </li>
+          </li>
+      </ul>
+
 
     </div>
     <div id="basket-item-nr"></div>
