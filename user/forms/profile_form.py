@@ -3,7 +3,7 @@ from user.models import Profile
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
-        exclude = ['id','user']
+        exclude = [ 'id','user' ]
         widgets = {
-            'profile_image':widgets.TextInput(attrs={'class': 'form-control'})
+            'profile_image': widgets.TextInput(attrs={'class': 'form-control'})
         }
