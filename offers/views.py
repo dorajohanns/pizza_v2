@@ -7,18 +7,6 @@ from menu.models import Pizza
 
 
 def index(request):
-    if 'search_filter' in request.GET:
-        search_filter = request.GET['search_filter']
-        offers = [{
-            'id': x.id,
-            'name': x.name,
-            'desc': x.description,
-            #'image': x.image,
-            'price': x.price,
-        }for x in Offers.objects.filter(name__icontains=search_filter)]
-
-        return JsonResponse({'data': offers})
-
     return render(request, 'offers/offers.html', context={
         'offers': Offers.objects.all().order_by('name')
     })
