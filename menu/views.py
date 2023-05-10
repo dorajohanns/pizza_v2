@@ -18,9 +18,22 @@ def index(request):
 
         return JsonResponse({'data': pizzas})
 
+    if 'sort_by_name' in request.GET and request.GET['sort_by_name'] == 'asc':
+        pizzas = Pizza.objects.all().order_by('name')
+    elif 'sort_by_name' in request.GET and request.GET['sort_by_name'] == 'desc':
+        pizzas = Pizza.objects.all().order_by('-name')
+    elif 'sort_by_price' in request.GET and request.GET['sort_by_price'] == 'asc':
+        pizzas = Pizza.objects.all().order_by('price')
+    elif 'sort_by_price' in request.GET and request.GET['sort_by_price'] == 'desc':
+        pizzas = Pizza.objects.all().order_by('-price')
+    else:
+        pizzas = Pizza.objects.all().order_by('name')
+
     return render(request, 'menu-menu/menu.html', context={
-        'pizzas': Pizza.objects.all().order_by('name')
+        'pizzas': pizzas
     })
+
+
 
 def get_pizza_by_id(request, id):
     return render(request, 'menu-menu/pizza_details.html', {
