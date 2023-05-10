@@ -12,7 +12,7 @@ def index(request):
             'id': x.id,
             'name': x.name,
             'desc': x.description,
-            'image': x.image,
+            #'image': x.image,
             'price': x.price,
         }for x in Offers.objects.filter(name__icontains=search_filter)]
 
