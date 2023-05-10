@@ -11,7 +11,19 @@
             <p class="offer-title">{{ offer.name }}</p>
             <p class="description">{{ offer.description }}</p>
             <p class="offer-price">${{ offer.price }}</p>
-            <button class="basket-btn" onclick="addToBasket({{ offer.id }})">Add to basket</button>
         </div>
     </div>
+    <p class="offer-title2">Select two pizzas to include in the offer</p>
+
+    <div id="pizzas-container">
+        {% for pizza in pizzas %}
+            <div id="{{ pizza.name }}" class="offer-pizza-container">
+                <h2>{{ pizza.name }}</h2>
+                <p>{{ pizza.toppings }}</p>
+                <img src="../../static/images/{{ pizza.image }}">
+                <button class="select-btn" onclick="addOfferToBasket('{{ pizza.name }}')">Select pizza</button>
+            </div>
+        {% endfor %}
+    </div>
+    <button id="offer-add" class="basket-btn" onclick="addToBasket([{{ offer.id }}, '{{ offer.name }}','margarita.jpg', {{ offer.price }}])" disabled>Add to basket</button>
 {% endblock %}
