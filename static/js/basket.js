@@ -134,7 +134,6 @@ const basketStatus = () => {
                 cartCount += pizza[4];
             }
         })
-        console.log(cartCount);
         basketQuantity.textContent = cartCount;
         basketQuantity.style.display = "block";
     }

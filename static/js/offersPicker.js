@@ -44,6 +44,10 @@ const addToBasketOffer = (list) => {
         updateBasket();
     }
     openNav();
+    selected.map((offer) => {
+        uncolorPizzaContainer(offer);
+    });
+    selected = [];
 }
 
 const updateBasketOffers = () => {
