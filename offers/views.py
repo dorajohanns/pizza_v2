@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from offers.models import Offers
+from offers.models import Offers, OfferImage
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
 from menu.models import Pizza
@@ -8,11 +8,13 @@ from menu.models import Pizza
 
 def index(request):
     return render(request, 'offers/offers.html', context={
-        'offers': Offers.objects.all().order_by('name')
+        'offers': Offers.objects.all().order_by('name'),
+        'offerimage': OfferImage.objects.all()
     })
 
 def get_offer_by_id(request, id):
     return render(request, 'offers/offer_details.html', {
         'offer': get_object_or_404(Offers, pk=id),
-        'pizzas': Pizza.objects.all().order_by('name')
+        'pizzas': Pizza.objects.all().order_by('name'),
+        'offerimage': OfferImage.objects.all()
     })

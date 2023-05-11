@@ -10,7 +10,7 @@
         <main>
             <div class="offers">
                 {% for offer in offers %}
-                    {% include 'offers/single_offer.html' with offer=offer %}
+                    {% include 'offers/single_offer.html' with offer=offer image=offerimage %}
                 {% endfor %}
             </div>
         </main>
