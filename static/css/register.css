@@ -8,7 +8,7 @@ form.registerForm {
   margin-bottom: 100px;
   margin-top: 20px;
 }
-form.form.form-horizontal {
+#profile-form{
     margin-left: 28%;
     margin-top: 75px;
     margin-bottom: 16%;
