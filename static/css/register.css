@@ -11,7 +11,15 @@ form.registerForm {
 form.form.form-horizontal {
     margin-left: 28%;
     margin-top: 75px;
-    margin-bottom: 20%;
+    margin-bottom: 16%;
+}
+
+input#id_name {
+    width: 70%;
+}
+input#id_profile_image{
+    width: 70%;
+    margin-bottom: 10px;
 }
 
 #register-body {
