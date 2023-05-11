@@ -28,7 +28,7 @@ def paymentInfo(request):
         form = PaymentInfoForm(data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect('menu')
+            return render(request, 'checkout/review_step.html')
 
     return render(request,'checkout/payment_info.html',{
         'form': PaymentInfoForm()

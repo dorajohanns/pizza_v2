@@ -15,7 +15,6 @@ class ContactInfoForm(ModelForm):
             countrylist.append((i.name, i.name))
         return countrylist
 
-
     class Meta:
         model = ContactInfo
         exclude = [ 'id' ]
@@ -24,7 +23,5 @@ class ContactInfoForm(ModelForm):
             'streetName': widgets.TextInput(attrs={'class': 'form-control'}),
             'houseNumber': widgets.NumberInput(attrs={'class': 'form-control'}),
             'city': widgets.TextInput(attrs ={'class': 'form-control'}),
-            #'country': widgets.Select(choices =listi, attrs ={'class': 'form-control'}),
-            #!!!!!MUNA EFTIR AÐ GERA: Country (displayed as a <select> HTML element)!!!!
             'postalCode': widgets.NumberInput(attrs={'class': 'form-control'})
         }
