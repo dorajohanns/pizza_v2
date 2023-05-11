@@ -58,11 +58,11 @@ $(document).ready(function(){
 
                 var newHtml = data.map(d => {
                     return `<div class="menu-div">
-                                <a href="/menu/${d.id}">
+                                <a id="a-href-style-menu" href="/menu/${d.id}">
                                     <img class="menu-img" src="../../static/images/${d.image}"/>
                                     <h3 class="pizza-name">${d.name}</h3>
                                     <p class="pizza-topp">${d.toppings}</p>
-                                    <span class="pizza-price">${d.price}</span>     
+                                    <span class="pizza-price">${d.price} kr.</span>     
                                 </a>
                             </div>`
                 });

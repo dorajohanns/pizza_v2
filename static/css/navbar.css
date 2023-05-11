@@ -11,9 +11,14 @@
     white-space: nowrap;
 
 }
+
+#user-icon{
+    width: 35px;
+    height: 35px;
+}
 .profile-img{
     width: 100%;
-    height: 100%;
+    height: 60%;
 }
 li#nav-log-pro {
     display: flex;
