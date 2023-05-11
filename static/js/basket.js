@@ -57,7 +57,7 @@ const updateBasket = () => {
 
             let delbtn = document.createElement("button");
             delbtn.onclick = () => removeFromBasket(key);
-            delbtn.textContent = "remove item from cart";
+            delbtn.textContent = "remove item from basket";
             delbtn.id = "delbtn";
 
             pizzadiv.appendChild(nametag);
