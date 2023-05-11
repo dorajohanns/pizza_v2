@@ -64,7 +64,8 @@
     color: white;
     font-family: Arial, sans-serif;
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 60px;
+    margin-bottom: 40px;
 }
 
 .offer-pizza-container {
@@ -78,10 +79,11 @@
 
 #pizzas-container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 30px;
 }
 
 #offer-add:disabled {
@@ -95,3 +97,6 @@
     background-color: white;
     border-radius: 5px;
 }
+
+
+

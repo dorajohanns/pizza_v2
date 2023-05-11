@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <header class="contact-info-header">
+      <h1 class="contact-info-text">Contact Information</h1>
+    </header>
+    <main>
+        <form id="contact-info-form" class="form form-horizontal" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input id="contact-info-submit-button" type="submit" class="btn btn-primary pull-right" value="Submit contact information and head to pay!">
+        </form>
+    </main>
+
+{% endblock %}
