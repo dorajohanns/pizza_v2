@@ -1,16 +1,16 @@
-.checkout-header {
+.contact-info-header {
   background-color: #FFA500;
   color: white;
   padding: 20px;
 }
 
-.checkout-text{ /*text in header*/
+.contact-info-text{ /*text in header*/
   position: relative;
-  animation-name: textHeader-checkout;
+  animation-name: textHeader-contact-info;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
-@keyframes textHeader-checkout {
+@keyframes textHeader-contact-info {
   0% {left: 0%}
   100% {left: 12%}
 
