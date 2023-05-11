@@ -124,7 +124,18 @@ const basketStatus = () => {
         document.getElementById("clear-cart").style.display = "block";
         document.getElementById("non-empty-cart").style.display = "inline-block";
         const basketQuantity = document.getElementById("basket-item-nr")
-        basketQuantity.textContent = Object.keys(sessionStorage).length;
+        let cartCount = 0
+        JSON.parse(sessionStorage.getItem("offers")).map((offer) => {
+            cartCount += offer[4];
+        })
+        Object.keys(sessionStorage).map((pizza) => {
+            if (pizza != "offers") {
+                pizza = JSON.parse(sessionStorage.getItem(pizza))
+                cartCount += pizza[4];
+            }
+        })
+        console.log(cartCount);
+        basketQuantity.textContent = cartCount;
         basketQuantity.style.display = "block";
     }
 }

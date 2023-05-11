@@ -72,14 +72,14 @@ const updateBasketOffers = () => {
         quantityCounter.id = "quantity-counter";
         let minus = document.createElement("button");
         minus.textContent = "-";
-        minus.onclick = () => removeOffer(selected, false);
+        minus.onclick = () => removeOffer(offer[2], false);
         minus.className = "quantity-btn"
         let quantity = document.createElement("span");
         quantity.textContent = offer[4];
         quantity.className = "quantity"
         let plus = document.createElement("button");
         plus.textContent = "+";
-        plus.onclick = () => increaseOffer(selected);
+        plus.onclick = () => increaseOffer(offer[2]);
         plus.className = "quantity-btn"
         quantityCounter.appendChild(minus);
         quantityCounter.appendChild(quantity);
