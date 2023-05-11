@@ -4,16 +4,23 @@
   padding: 20px;
 }
 
-/*.register-text{ text in header
-  position: relative;
-  animation-name: textHeader-register;
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
+form.registerForm {
+  margin-bottom: 100px;
+  margin-top: 20px;
 }
-@keyframes textHeader-register {
-  0% {left: -100%}
-  100% {left: 3%}
-}*/
+form.form.form-horizontal {
+    margin-left: 28%;
+    margin-top: 75px;
+    margin-bottom: 16%;
+}
+
+input#id_name {
+    width: 70%;
+}
+input#id_profile_image{
+    width: 70%;
+    margin-bottom: 10px;
+}
 
 #register-body {
   background-color: #f3f0f0;

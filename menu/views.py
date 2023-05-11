@@ -17,7 +17,7 @@ def index(request):
                 'name': pizza.name,
                 'toppings': pizza.toppings,
                 'image': pizza.image,
-                'price': pizza.price,
+                'price': int(pizza.price),
                 'type': pizza_type,
             }
             pizzas.append(pizza_data)

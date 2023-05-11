@@ -58,13 +58,11 @@ $(document).ready(function(){
 
                 var newHtml = data.map(d => {
                     return `<div class="menu-div">
-                                <a href="/menu/${d.id}">
+                                <a id="a-href-style-menu" href="/menu/${d.id}">
                                     <img class="menu-img" src="../../static/images/${d.image}"/>
                                     <h3 class="pizza-name">${d.name}</h3>
-                                    <p class="pizza-top">${d.toppings}</p>
-                                    <span class="price">${d.price}</span>
-                                    <span class="price">${d.type}</span>
-                                    
+                                    <p class="pizza-topp">${d.toppings}</p>
+                                    <span class="pizza-price">${d.price} kr.</span>     
                                 </a>
                             </div>`
                 });
@@ -90,14 +88,14 @@ $(document).ready(function(){
     $('#sort-btn').on('click', function(e) {
         e.preventDefault();
         sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
-        $('#sort-btn').text(sortOrder === 'asc' ? 'Ordered by A-Z' : 'Ordered by Z-A');
+        $('#sort-btn').text(sortOrder === 'asc' ? 'Name: A-Z' : 'Name: Z-A');
         updateMenu('name');
     });
 
     $('#sort-by-price-btn').on('click', function(e) {
         e.preventDefault();
         sortByPriceOrder = sortByPriceOrder === 'asc' ? 'desc' : 'asc';
-        $('#sort-by-price-btn').text(sortByPriceOrder === 'asc' ? 'Price: low to high' : 'Price: high to low');
+        $('#sort-by-price-btn').text(sortByPriceOrder === 'asc' ? 'Price: $ to $$$' : 'Price: $$$ to $');
         updateMenu('price');
     });
 
