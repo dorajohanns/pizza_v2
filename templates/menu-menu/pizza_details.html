@@ -11,6 +11,7 @@
             <p class="pizza-title">{{ pizza.name }} Pizza!</p>
             <p class="topping-title">Toppings:</p>
             <p>{{ pizza.toppings }}</p>
+            <span class="description-menu">{{ pizza.description }}</span>
             <p class="detail-price">{{ pizza.price }} kr.</p>
             <button class="basket-btn" onclick="addToBasket([{{ pizza.id }}, '{{ pizza.name }}', '{{ pizza.image }}', {{ pizza.price }}])">Add to basket</button>
         </div>
