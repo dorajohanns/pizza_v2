@@ -19,7 +19,7 @@
           {% if user.is_authenticated %}
             <li class="nav-item" id="nav-log-pro">
                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                <a class="nav-link" id="user-name" href="{% url 'profile' %}">{{ user.profile.name }}</a>
             </li>
             {% else %}
               <li class="nav-item">

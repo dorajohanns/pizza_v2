@@ -5,7 +5,10 @@
     padding-right: 20px;
     font-size: 27px;
     color: white;
+    display: flex;
     text-decoration: underline;
+    gap: 10%;
+    white-space: nowrap;
 
 }
 .profile-img{
