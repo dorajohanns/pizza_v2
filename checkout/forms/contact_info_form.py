@@ -3,7 +3,7 @@ from checkout.models import ContactInfo
 class ContactInfoForm(ModelForm):
     class Meta:
         model = ContactInfo
-        exclude = ['id']
+        exclude = [ 'id' ]
         widgets = {
             'fullName': widgets.TextInput(attrs={'class': 'form-control'}),
             'streetName': widgets.TextInput(attrs={'class': 'form-control'}),

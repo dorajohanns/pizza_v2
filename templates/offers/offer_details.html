@@ -10,10 +10,10 @@
         <div class="detail-text-container-offer">
             <p class="offer-title">{{ offer.name }}</p>
             <p class="description">{{ offer.description }}</p>
-            <p class="offer-price">${{ offer.price }}</p>
+            <p class="offer-price">{{ offer.price }} kr.</p>
         </div>
     </div>
-    <p class="offer-title2">Select two pizzas to include in the offer</p>
+    <p class="offer-title2">Select two seperate pizzas to include in the offer:</p>
 
     <div id="pizzas-container">
         {% for pizza in pizzas %}
