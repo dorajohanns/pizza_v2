@@ -1,18 +1,24 @@
-.checkout-header {
-  background-color: #FFA500;
-  color: white;
-  padding: 20px;
+.review-header {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFA500;
+    color: white;
+    padding: 20px;
+}
+.back-logo-header {
+    width: 50px;
+    margin-right: 20px;
 }
 
-.checkout-text{ /*text in header*/
+.review-text{ /*text in header*/
   position: relative;
-  animation-name: textHeader-checkout;
+  animation-name: textHeader-review;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
-@keyframes textHeader-checkout {
+@keyframes textHeader-review {
   0% {left: 0%}
-  100% {left: 12%}
+  100% {left: 9%}
 
 }
 

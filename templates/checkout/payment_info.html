@@ -5,12 +5,12 @@
         <a class="back-logo-header" href="{% url 'contactInfo' %}"><img src="../../static/images/backyellow.jpg" alt="back icon"></a>
         <h1 class="payment-info-text">Payment Information</h1>
     </header>
-    <main>
-        <form id="payment-info-form" class="form form-horizontal" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <input id="payment-info-submit-button" type="submit" class="btn btn-primary pull-right" value="Submit payment info and head to review">
-        </form>
-    </main>
+
+    <form id="payment-info-form" class="form form-horizontal" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input id="payment-info-submit-button" type="submit" class="btn btn-primary pull-right" value="Submit payment info and head to review">
+    </form>
+
 
 {% endblock %}
