@@ -90,7 +90,7 @@ img {
 
 
 
-#cart-pizzas {
+#cart-pizzas, #cart-offers {
     display: flex;
     flex-direction: column;
     width: 100%;

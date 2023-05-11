@@ -21,9 +21,9 @@
                 <h2>{{ pizza.name }}</h2>
                 <p>{{ pizza.toppings }}</p>
                 <img src="../../static/images/{{ pizza.image }}">
-                <button class="select-btn" onclick="addOfferToBasket('{{ pizza.name }}')">Select pizza</button>
+                <button class="select-btn" onclick="selectPizza('{{ pizza.name }}')">Select pizza</button>
             </div>
         {% endfor %}
     </div>
-    <button id="offer-add" class="basket-btn" onclick="addToBasket([{{ offer.id }}, '{{ offer.name }}','margarita.jpg', {{ offer.price }}])" disabled>Add to basket</button>
+    <button id="offer-add" class="basket-btn" onclick="addToBasketOffer(['{{ offer.name }}','margarita.jpg', {{ offer.price }}])" disabled>Add to basket</button>
 {% endblock %}
