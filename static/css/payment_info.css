@@ -1,7 +1,14 @@
 .payment-info-header {
-  background-color: #FFA500;
-  color: white;
-  padding: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: #FFA500;
+    color: white;
+    padding: 20px;
+}
+
+.back-logo-header {
+    width: 50px;
+    margin-right: 20px;
 }
 
 .payment-info-text{ /*text in header*/
@@ -12,7 +19,7 @@
 }
 @keyframes textHeader-payment-info {
   0% {left: 0%}
-  100% {left: 12%}
+  100% {left: 8%}
 
 }
 
