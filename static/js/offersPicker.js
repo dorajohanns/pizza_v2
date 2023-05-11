@@ -65,9 +65,7 @@ const updateBasketOffers = () => {
         imgtag.src = "../static/images/" + offer[1];
 
         let includedPizzas = document.createElement("span")
-        offer[2].map((pizza) => {
-            includedPizzas.textContent += pizza;
-        })
+        includedPizzas.textContent = offer[2][0] + " and " + offer[2][1]
 
         let priceTag = document.createElement("h3");
         priceTag.textContent = offer[3] + " Kr";
