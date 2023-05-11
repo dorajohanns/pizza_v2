@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <header class="checkout-header">
-      <h1 class="checkout-text">Checkout</h1>
+    <header class="review-header">
+        <a class="back-logo-header" href="{% url 'paymentInfo' %}"><img src="../../static/images/backyellow.jpg" alt="back icon"></a>
+        <h1 class="review-text">Review order</h1>
     </header>
 
-    <body id="checkout-body">
+    <body id="review-body">
         <main>
             <div id="your-order-items">
             </div>
