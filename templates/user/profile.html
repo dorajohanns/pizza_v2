@@ -3,7 +3,7 @@
     <header class="register-header">
         <h1 class="register-text">Profile</h1>
     </header>
-    <form class="form form-horizontal" method="post">
+    <form class="form form-horizontal" id='profile-form' method="post">
         {% csrf_token %}
         {{ form }}
     <input type="submit" class='btn btn-primary' value="update">
