@@ -125,9 +125,11 @@ const basketStatus = () => {
         document.getElementById("non-empty-cart").style.display = "inline-block";
         const basketQuantity = document.getElementById("basket-item-nr")
         let cartCount = 0
-        JSON.parse(sessionStorage.getItem("offers")).map((offer) => {
+        if (sessionStorage.getItem("offers") != null) {
+            JSON.parse(sessionStorage.getItem("offers")).map((offer) => {
             cartCount += offer[4];
         })
+        }
         Object.keys(sessionStorage).map((pizza) => {
             if (pizza != "offers") {
                 pizza = JSON.parse(sessionStorage.getItem(pizza))

@@ -25,5 +25,5 @@
             </div>
         {% endfor %}
     </div>
-    <button id="offer-add" class="basket-btn" onclick="addToBasketOffer(['{{ offer.name }}','margarita.jpg', {{ offer.price }}])" disabled>Add to basket</button>
+    <button id="offer-add" class="basket-btn" onclick="addToBasketOffer(['{{ offer.name }}','{{ offerimage.first.image }}', {{ offer.price }}])" disabled>Add to basket</button>
 {% endblock %}
