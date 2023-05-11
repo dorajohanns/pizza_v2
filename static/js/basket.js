@@ -22,62 +22,75 @@ const updateBasket = () => {
     let priceSum = 0;
 
     Object.keys(sessionStorage).map((key) => {
-        let pizzaArray = JSON.parse(sessionStorage.getItem(key))
-        console.log(pizzaArray);
+        if (key != "offers") {
+            let pizzaArray = JSON.parse(sessionStorage.getItem(key))
 
-        let pizzadiv = document.createElement("div");
+            let pizzadiv = document.createElement("div");
 
-        let nametag = document.createElement("h1");
-        nametag.textContent = pizzaArray[1]
+            let nametag = document.createElement("h1");
+            nametag.textContent = pizzaArray[1]
 
-        let imgtag = document.createElement("img");
-        imgtag.alt = pizzaArray[1];
-        imgtag.src = "../static/images/" + pizzaArray[2]
+            let imgtag = document.createElement("img");
+            imgtag.alt = pizzaArray[1];
+            imgtag.src = "../static/images/" + pizzaArray[2]
 
-        let priceTag = document.createElement("h3");
-        priceTag.textContent = pizzaArray[3] + " Kr";
+            let priceTag = document.createElement("h3");
+            priceTag.textContent = pizzaArray[3] + " Kr";
 
-        let quantityCounter = document.createElement("div");
-        quantityCounter.id = "quantity-counter";
-        let minus = document.createElement("button");
-        minus.textContent = "-";
-        minus.onclick = () => decreaseQuantity(pizzaArray[0]);
-        minus.className = "quantity-btn"
-        let quantity = document.createElement("span");
-        quantity.textContent = pizzaArray[4];
-        quantity.className = "quantity"
-        let plus = document.createElement("button");
-        plus.textContent = "+";
-        plus.onclick = () => increaseQuantity(pizzaArray[0]);
-        plus.className = "quantity-btn"
-        quantityCounter.appendChild(minus);
-        quantityCounter.appendChild(quantity);
-        quantityCounter.appendChild(plus);
+            let quantityCounter = document.createElement("div");
+            quantityCounter.id = "quantity-counter";
+            let minus = document.createElement("button");
+            minus.textContent = "-";
+            minus.onclick = () => decreaseQuantity(pizzaArray[0]);
+            minus.className = "quantity-btn"
+            let quantity = document.createElement("span");
+            quantity.textContent = pizzaArray[4];
+            quantity.className = "quantity"
+            let plus = document.createElement("button");
+            plus.textContent = "+";
+            plus.onclick = () => increaseQuantity(pizzaArray[0]);
+            plus.className = "quantity-btn"
+            quantityCounter.appendChild(minus);
+            quantityCounter.appendChild(quantity);
+            quantityCounter.appendChild(plus);
 
 
-        let delbtn = document.createElement("button");
-        delbtn.onclick = () => removeFromBasket(key);
-        delbtn.textContent = "remove item from cart";
-        delbtn.id = "delbtn";
+            let delbtn = document.createElement("button");
+            delbtn.onclick = () => removeFromBasket(key);
+            delbtn.textContent = "remove item from cart";
+            delbtn.id = "delbtn";
 
-        pizzadiv.appendChild(nametag);
-        pizzadiv.appendChild(imgtag);
-        pizzadiv.appendChild(priceTag);
-        pizzadiv.appendChild(quantityCounter);
-        pizzadiv.appendChild(delbtn);
+            pizzadiv.appendChild(nametag);
+            pizzadiv.appendChild(imgtag);
+            pizzadiv.appendChild(priceTag);
+            pizzadiv.appendChild(quantityCounter);
+            pizzadiv.appendChild(delbtn);
 
-        pizzadiv.id = "pizza-container"
-        cart.appendChild(pizzadiv);
-        priceSum += (pizzaArray[3] * pizzaArray[4]);
+            pizzadiv.id = "pizza-container"
+            cart.appendChild(pizzadiv);
+            priceSum += (pizzaArray[3] * pizzaArray[4]);
+        }
     });
 
+    priceSum += offersTotalPrice();
     const priceTag = document.getElementById("priceSum");
     priceTag.textContent = "Total: " + priceSum + " Kr";
+
+    updateBasketOffers();
     basketStatus();
+}
+
+const offersTotalPrice = () => {
+    let sum = 0
+    JSON.parse(sessionStorage.getItem("offers")).map((offer) => {
+        sum += offer[3] * offer[4]
+    })
+    return sum
 }
 
 const clearCart = () => {
     sessionStorage.clear();
+    createOfferStorage();
     updateBasket();
 }
 
@@ -100,7 +113,7 @@ const increaseQuantity = (id) => {
 }
 
 const basketStatus = () => {
-    if (Object.keys(sessionStorage).length === 0) {
+    if (Object.keys(sessionStorage).length === 1 && JSON.parse(sessionStorage.getItem("offers")).length === 0) {
         document.getElementById("empty-cart").style.display = "block";
         document.getElementById("clear-cart").style.display = "none";
         document.getElementById("non-empty-cart").style.display = "none";
@@ -125,4 +138,12 @@ function closeNav() {
   document.getElementById("cartNav").style.width = "0%";
 }
 
-basketStatus()
+const createOfferStorage = () => {
+    sessionStorage.setItem("offers", JSON.stringify([]));
+}
+
+basketStatus();
+
+if (!sessionStorage.getItem("offers")) {
+    createOfferStorage();
+}
