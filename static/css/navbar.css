@@ -20,9 +20,16 @@
     width: 100%;
     height: 60%;
 }
+img.logo {
+    padding-left: 30px;
+}
 li#nav-log-pro {
     display: flex;
 }
+nav.navbar.bg-body-tertiary {
+    background-color: white !important;
+}
+
 
 #subnav {
     background-color: white;
