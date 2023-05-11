@@ -88,14 +88,14 @@ $(document).ready(function(){
     $('#sort-btn').on('click', function(e) {
         e.preventDefault();
         sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
-        $('#sort-btn').text(sortOrder === 'asc' ? 'Ordered by A-Z' : 'Ordered by Z-A');
+        $('#sort-btn').text(sortOrder === 'asc' ? 'Name: A-Z' : 'Name: Z-A');
         updateMenu('name');
     });
 
     $('#sort-by-price-btn').on('click', function(e) {
         e.preventDefault();
         sortByPriceOrder = sortByPriceOrder === 'asc' ? 'desc' : 'asc';
-        $('#sort-by-price-btn').text(sortByPriceOrder === 'asc' ? 'Price: low to high' : 'Price: high to low');
+        $('#sort-by-price-btn').text(sortByPriceOrder === 'asc' ? 'Price: $ to $$$' : 'Price: $$$ to $');
         updateMenu('price');
     });
 
