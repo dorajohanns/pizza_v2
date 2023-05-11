@@ -2,7 +2,8 @@
 
 {% block content %}
     <header class="payment-info-header">
-      <h1 class="payment-info-text">Payment Information</h1>
+        <a class="back-logo-header" href="{% url 'contactInfo' %}"><img src="../../static/images/backyellow.jpg" alt="back icon"></a>
+        <h1 class="payment-info-text">Payment Information</h1>
     </header>
     <main>
         <form id="payment-info-form" class="form form-horizontal" method="post">
