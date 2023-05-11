@@ -15,10 +15,9 @@
                 <label for="type-filter">Type:</label>
                 <select id="type-filter">
                     <option value="">All</option>
-                    <option value="spicy">Spicy</option>
-                    <option value="vegetarian">Vegetarian</option>
-                    <option value="vegan">Vegan</option>
-                    <option value="extra spicy">Extra spicy</option>
+                    {% for type in types %}
+                        <option value={{ type.name }}>{{ type.name }}</option>
+                    {% endfor %}
                 </select>
             </div>
         </div>
