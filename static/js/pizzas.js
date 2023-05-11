@@ -1,6 +1,7 @@
 $(document).ready(function(){
     var sortOrder = 'asc';
     var sortByPriceOrder = 'asc';
+    var filterByType = '';
 
     function updateMenu(sortBy) {
         var searchText = $('#search-box').val();
@@ -9,6 +10,13 @@ $(document).ready(function(){
             type: 'GET',
             success:function(resp){
                 var data = resp.data;
+
+                // Apply type filter if selected
+                if (filterByType) {
+                    data = data.filter(function(d) {
+                        return d.type === filterByType;
+                    });
+                }
 
                 if (sortBy === 'name') {
                     if (sortOrder === 'asc') {
@@ -55,6 +63,8 @@ $(document).ready(function(){
                                     <h3 class="pizza-name">${d.name}</h3>
                                     <p class="pizza-top">${d.toppings}</p>
                                     <span class="price">${d.price}</span>
+                                    <span class="price">${d.type}</span>
+                                    
                                 </a>
                             </div>`
                 });
@@ -90,5 +100,11 @@ $(document).ready(function(){
         $('#sort-by-price-btn').text(sortByPriceOrder === 'asc' ? 'Price: low to high' : 'Price: high to low');
         updateMenu('price');
     });
+
+    $('#type-filter').on('change', function(e) {
+        filterByType = e.target.value;
+        updateMenu('name');
+    });
 });
+
 
