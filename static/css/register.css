@@ -4,16 +4,10 @@
   padding: 20px;
 }
 
-/*.register-text{ text in header
-  position: relative;
-  animation-name: textHeader-register;
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
+form.registerForm {
+  margin-bottom: 100px;
+  margin-top: 20px;
 }
-@keyframes textHeader-register {
-  0% {left: -100%}
-  100% {left: 3%}
-}*/
 
 #register-body {
   background-color: #f3f0f0;
