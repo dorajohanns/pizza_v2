@@ -115,3 +115,8 @@ p {
 }
 
 
+span.description-menu {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}

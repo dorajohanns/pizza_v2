@@ -1,5 +1,5 @@
 from django.forms import ModelForm, widgets
-from checkout.models import ContactInfo
+from checkout.models import ContactInfo, Countries
 class ContactInfoForm(ModelForm):
     class Meta:
         model = ContactInfo

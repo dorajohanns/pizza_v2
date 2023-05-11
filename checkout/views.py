@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from checkout.forms.contact_info_form import ContactInfoForm
 from checkout.forms.payment_info_form import PaymentInfoForm
-from checkout.models import ContactInfo, PaymentInfo
+from checkout.models import ContactInfo, PaymentInfo, Countries
 
 # Create your views here.
 
@@ -19,7 +19,8 @@ def contactInfo(request):
             return redirect('paymentInfo')
 
     return render(request,'checkout/contact_info.html',{
-        'form': ContactInfoForm()
+        'form': ContactInfoForm(),
+        'countries': Countries.objects.all().order_by('name')
     })
 
 def paymentInfo(request):
