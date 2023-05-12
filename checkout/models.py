@@ -1,5 +1,4 @@
 from django.db import models
-from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
 
 # Create your models here.
 
