@@ -14,9 +14,9 @@ class ContactInfo(models.Model):
 
 class PaymentInfo(models.Model):
     cardholderName = models.CharField(max_length=255)
-    cardNumber = models.IntegerField(max_length=12)
-    expirationDate = models.IntegerField(max_length=4)
-    cvc = models.IntegerField(max_length=3)
+    cardNumber = models.IntegerField()
+    expirationDate = models.IntegerField()
+    cvc = models.IntegerField()
 
 
 class Countries(models.Model):
