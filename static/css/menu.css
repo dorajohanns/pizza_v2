@@ -99,19 +99,23 @@ p {
 #search-btn{
   background-color: #c05353;
   border-radius: 0 5px 5px 0;
+  color: white;
 }
 #reset-btn{
   background-color: #c05353;
   border-radius: 5px 5px 5px 5px;
   margin-right: 30px;
+  color: white;
 }
 #sort-btn{
   background-color: #c05353;
   border-radius: 5px 5px 5px 5px;
+  color: white;
 }
 #sort-by-price-btn{
   background-color: #c05353;
   border-radius: 5px 5px 5px 5px;
+  color: white;
 }
 
 
