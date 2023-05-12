@@ -3,7 +3,7 @@
     <header class="register-header">
         <h1 class="register-text">Login in to buy our delicious pizza</h1>
     </header>
-    <form method="post" class="form form-horizontal" id='profile-form' >
+    <form method="post" class="form form-horizontal" >
         {% csrf_token %}
         {{ form }}
     <input type="submit" class="btn btn-primary pull-right" value="login">

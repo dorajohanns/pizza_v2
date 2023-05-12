@@ -24,4 +24,15 @@ main {
 
 #contact-info-form {
   color: black;
+  margin-left: 28%;
+  margin-top: 75px;
+  margin-bottom: 16%;
+  width: 40%;
+}
+
+#contact-info-submit-button{
+  background-color: tomato;
+  border-color: tomato;
+  margin-top: 20px;
+
 }
