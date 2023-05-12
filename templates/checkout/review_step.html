@@ -11,7 +11,13 @@
             <div id="your-order-items">
             </div>
             <h3 id="total-price"></h3>
-            <button id="offer-add" class="basket-btn" >Confirm Order</button>
+            <div id="info-div">
+                <h2>Your Information:</h2>
+            </div>
+            <a href="{% url 'confirmation' %}">
+                <input id="confirm-button" type="button" value="Confirm order" class="basket-btn"">
+            </a>
+
 
 
 

@@ -22,7 +22,7 @@ const updateBasket = () => {
     let priceSum = 0;
 
     Object.keys(sessionStorage).map((key) => {
-        if (key != "offers") {
+        if (key != "offers" && !isNaN(key)) {
             let pizzaArray = JSON.parse(sessionStorage.getItem(key))
 
             let pizzadiv = document.createElement("div");
@@ -131,7 +131,7 @@ const basketStatus = () => {
         })
         }
         Object.keys(sessionStorage).map((pizza) => {
-            if (pizza != "offers") {
+            if (pizza != "offers" && !isNaN(pizza)) {
                 pizza = JSON.parse(sessionStorage.getItem(pizza))
                 cartCount += pizza[4];
             }

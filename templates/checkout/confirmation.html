@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+    <header class="confirmation-header">
+      <h1 class="confirmation-text">Your order has been confirmed!</h1>
+    </header>
+
+    <body id="confirmation-body">
+        <main>
+            <h3 id="main-text-confirmation">Your order has been confirmed</h3>
+
+
+        </main>
+    </body>
+
+{% endblock %}
