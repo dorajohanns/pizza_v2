@@ -58,11 +58,11 @@ img {
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgb(168, 17, 17);
+  background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
   justify-content: center;
+    border-left: 2px solid black;
 }
 
 .overlay-content {
@@ -71,6 +71,11 @@ img {
   width: 100%;
   text-align: center;
   margin-top: 1px;
+}
+
+.cart-title {
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
 }
 
 .overlay a {
@@ -113,25 +118,30 @@ img {
     align-items: center;
 }
 
+#cart-offers {
+    border-bottom: 2px solid black;
+}
+
 #pizza-container {
     margin-top: 20px;
     padding: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(236, 168, 168, 0.22);
     width: 80%;
     margin-bottom: 30px;
+    border-radius: 10px;
 }
 
 #delbtn {
     background-color: #FFA500;
     border-radius: 5px;
     border: none;
-    display: inline-block;
-    font-size: 20px;
-    padding: 15px 32px;
-    color: black;
+    font-size: 15px;
+    padding: 10px 25px;
+    color: white;
     font-family: Arial, sans-serif;
     margin-top: 10px;
     margin-left: 20px;
+    margin-bottom: 30px;
 }
 
 #delbtn:active{
@@ -158,12 +168,13 @@ a.shop-btn {
 
 h3#priceSum {
     font-weight: bold;
-    color: white;
+    color: black;
     border-bottom: 2px solid white;
 }
 
 #non-empty-cart {
     display: none;
+    margin-top: 20px;
 }
 
 #basket-item-nr {
@@ -180,11 +191,11 @@ h3#priceSum {
 }
 
 #clear-cart-btn {
-    background-color: #FFA500;
+    background-color: rgba(241, 79, 79, 0.55);
     border-radius: 5px;
     border: none;
-    font-size: 20px;
-    padding: 15px 32px;
+    font-size: 15px;
+    padding: 10px 25px;
     color: white;
     font-family: Arial, sans-serif;
     margin-top: 10px;
