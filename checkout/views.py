@@ -5,11 +5,6 @@ from checkout.forms.payment_info_form import PaymentInfoForm
 from checkout.models import ContactInfo, PaymentInfo, Countries
 
 # Create your views here.
-
-#@login_required
-#def index(request):
-    #return render(request, 'checkout/contact_info.html')
-
 @login_required
 def contactInfo(request):
     if request.method == 'POST':

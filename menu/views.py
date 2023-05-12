@@ -40,8 +40,6 @@ def index(request):
         'types': PizzaType.objects.all().order_by('name')
     })
 
-
-
 def get_pizza_by_id(request, id):
     return render(request, 'menu-menu/pizza_details.html', {
         'pizza': get_object_or_404(Pizza, pk=id)
