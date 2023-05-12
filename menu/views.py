@@ -36,7 +36,8 @@ def index(request):
         pizzas = Pizza.objects.all().order_by('name')
 
     return render(request, 'menu-menu/menu.html', context={
-        'pizzas': pizzas
+        'pizzas': pizzas,
+        'types': PizzaType.objects.all().order_by('name')
     })
 
 
