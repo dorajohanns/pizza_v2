@@ -1,4 +1,5 @@
 from django.db import models
+from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
 
 # Create your models here.
 
@@ -14,9 +15,9 @@ class ContactInfo(models.Model):
 
 class PaymentInfo(models.Model):
     cardholderName = models.CharField(max_length=255)
-    cardNumber = models.IntegerField()
-    expirationDate = models.IntegerField()
-    cvc = models.IntegerField()
+    cardNumber = models.CharField(max_length=255)
+    expirationDate = models.CharField(max_length=255)
+    cvc = models.CharField(max_length=255)
 
 
 class Countries(models.Model):
