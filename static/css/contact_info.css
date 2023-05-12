@@ -31,8 +31,8 @@ main {
 }
 
 #contact-info-submit-button{
-  background-color: tomato;
-  border-color: tomato;
+  background-color: rgba(168, 17, 17, 0.72);
+  border-color: rgba(168, 17, 17, 0.72);
   margin-top: 20px;
 
 }
