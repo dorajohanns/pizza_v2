@@ -10,11 +10,9 @@ $(document).ready(function(){
             type: 'GET',
             success:function(resp){
                 var data = resp.data;
-
-                // Apply type filter if selected
                 if (filterByType) {
                     data = data.filter(function(d) {
-                        return d.type === filterByType;
+                        return d.type == filterByType;
                     });
                 }
 

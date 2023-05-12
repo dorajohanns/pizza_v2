@@ -18,7 +18,7 @@ def index(request):
                 'toppings': pizza.toppings,
                 'image': pizza.image,
                 'price': int(pizza.price),
-                'type': pizza_type,
+                'type': pizza_type.replace(' ',''),
             }
             pizzas.append(pizza_data)
 
