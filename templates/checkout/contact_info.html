@@ -9,7 +9,7 @@
     <form id="contact-info-form" class="form form-horizontal" method="post">
         {% csrf_token %}
         {{ form }}
-        <input id="contact-info-submit-button" type="submit" class="btn btn-primary pull-right" value="Submit contact information and head to pay!">
+        <input id="contact-info-submit-button" type="submit" class="btn btn-primary pull-right" value="Submit contact information and head to pay!" onclick="saveContactInformation()">
     </form>
 
 

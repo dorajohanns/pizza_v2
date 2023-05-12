@@ -34,6 +34,9 @@ def paymentInfo(request):
         'form': PaymentInfoForm()
     })
 
+def confirmation(request):
+    return render(request, 'checkout/confirmation.html')
+
 
 
 
