@@ -161,3 +161,7 @@ const savePaymentInformation = () => {
   sessionStorage.setItem("cvc", cvc);
 
 }
+
+const clearData = () => {
+  sessionStorage.clear();
+}
