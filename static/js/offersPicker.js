@@ -89,7 +89,7 @@ const updateBasketOffers = () => {
 
         let delbtn = document.createElement("button");
         delbtn.onclick = () => removeOffer(selected, true);
-        delbtn.textContent = "remove item from cart";
+        delbtn.textContent = "remove item from basket";
         delbtn.id = "delbtn";
 
         offerdiv.appendChild(nametag);
