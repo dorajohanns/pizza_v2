@@ -29,9 +29,15 @@ main {
   padding: 20px;
 }
 
-#payment-info-form{
-    margin-left: 28%;
+#payment-info-form{margin-left: 28%;
   margin-top: 75px;
   margin-bottom: 16%;
   width: 40%;
+}
+
+#payment-info-submit-button{
+  background-color: rgba(168, 17, 17, 0.72);
+  border-color: rgba(168, 17, 17, 0.72);
+  margin-top: 20px;
+
 }
