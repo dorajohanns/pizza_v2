@@ -11,6 +11,12 @@ form.registerForm {
 }
 #profile-form{
     margin-left: 28%;
+    margin-top: 100px;
+    margin-bottom: 18%;
+}
+
+#login-from{
+    margin-left: 28%;
     margin-top: 75px;
     margin-bottom: 16%;
 }
